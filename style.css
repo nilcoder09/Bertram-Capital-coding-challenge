@@ -37,9 +37,12 @@ body {
     background-color: #2980b9;
 }
   
-  .button-section {
+  .button-section{
+    display: flex;
     padding: 20px;
-  }
+    justify-content:space-between;
+  };
+    
   
   button {
     padding: 10px;
@@ -57,13 +60,14 @@ body {
   }
 
   #displayButton {
+    margin-top: 20px;
     display: inline-block;
     padding: 10px;
     background-color: #27ae60;
     color: #ffffff;
     border: none;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 20px;
     cursor: pointer;
     font-family: 'Arial', sans-serif;
 }
@@ -79,7 +83,7 @@ body {
     color: #ffffff;
     border: none;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 20px;
     cursor: pointer;
     font-family: 'Arial', sans-serif;
 }
@@ -88,4 +92,77 @@ body {
 }
 #confirmation:disabled{
     cursor: not-allowed;
+}
+
+#listof {
+    list-style: none;
+    padding: 0;
+  }
+  
+  #listof li {
+    margin: 5px 0;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+  }
+  
+  #listof li:first-child {
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-around;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0%;
+    margin: 0;
+    width: 100%;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+#nameDisplay{
+    margin-top: 30px;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #2980b9;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.payday {
+    margin-top: 50px;
+    text-align: center;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #00d9ff;
+    background-color: #333;
+    height: 50px;
+    justify-content: center;
+    display: flex;
+}
+.description{
+    background-color: #333;
+    margin-top: 50px;
+    text-align: center;
+    /* font-size: large; */
+    font-family: Arial, Helvetica, sans-serif;
+    color: #04f2f2;
 }

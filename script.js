@@ -1,13 +1,9 @@
 
-  // Function to display a name (Replace this with your actual logic)
+  // Function to display a name
   function displayName() {
-    if (names.length === 0) {
-      names = initialNames.slice(); // Reset the list if all names have been displayed
-    }
-  
+    let names = initialNames.slice(); // Copy the initial list
     const randomIndex = Math.floor(Math.random() * names.length);
     const selectedName = names[randomIndex];
-    names = names.filter(name => name !== selectedName); // Remove displayed name from the list
     return selectedName;
   }
   
@@ -34,9 +30,25 @@
   // Event listener for the display button
   document.getElementById('displayButton').addEventListener('click', function() {
     const nameDisplay = document.getElementById('nameDisplay');
-    const name = displayName();
+    const username = displayName();
     // Display the name
-    nameDisplay.innerHTML = `Name: ${name}`;
+    nameDisplay.innerHTML = `${username}`;
+    document.getElementById("confirmation").disabled = false;
+
+  });
+
+  document.getElementById( "confirmation" ).addEventListener( "click", function(){
+    const displayedName = document.getElementById('nameDisplay').textContent;
+    const index = initialNames.indexOf(displayedName);
+    const removedName = initialNames.splice(index, 1)[0];
+    const whopaid = document.getElementById("day1");
+    whopaid.innerHTML = `Today's coffee was paid by : ${removedName}`;
+    document.getElementById("confirmation").disabled = true;
+    if(initialNames.length === 0){
+        initialNames = restorNames.slice();
+        console.log("Array restored:", initialNames);
+    }
+
   });
   
   // Update the clock and date every second
@@ -46,8 +58,14 @@
   updateClock();
   
   // Initial list of names
-  const initialNames = ["John", "Jane", "Doe"];
-  let names = initialNames.slice(); // Copy the initial list
+  let initialNames = ["Bob", "Jeremy", "Ethan", "Lucas", "Mason", "Oliver"];
+  const restorNames = ["Bob", "Jeremy", "Ethan", "Lucas", "Mason", "Oliver"];
+  
   var myButton = document.getElementById('confirmation');
 
    myButton.disabled = true;
+
+
+
+
+
